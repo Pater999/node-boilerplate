@@ -2,15 +2,16 @@ name: pull-request
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [master]
 
 jobs:
   checks:
     name: Check - ${{ matrix.check }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        check: [test, lint:check, type:check]
+        check: ["test", "lint:check", "type-check"]
 
     steps:
       - name: Checkout code
