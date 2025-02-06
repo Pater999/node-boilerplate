@@ -9,8 +9,8 @@ jobs:
     name: Check - ${{ matrix.check }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        fail-fast: false
         check: ["test", "lint:check", "type-check"]
 
     steps:
