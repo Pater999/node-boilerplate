@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        check: ["test", "lint:check", "type:check"]
+        fail-fast: false
+        check: ["test", "lint:check", "type-check"]
 
     steps:
       - name: Checkout code
